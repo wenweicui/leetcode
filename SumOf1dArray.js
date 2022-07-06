@@ -20,3 +20,11 @@ var runningSum = function(nums) {
     
     return result;
 };
+
+var runningSum = function (nums) { 
+   let val = 0
+   let sum = nums.map(res=>{
+       return val = res + val
+   })
+   return sum
+};
