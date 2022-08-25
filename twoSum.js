@@ -12,8 +12,6 @@
  * Input: nums = [3,2,4], target = 6
  * Output: [1,2]
  */
-
-
 /**
  * @param {number[]} nums
  * @param {number} target
@@ -26,5 +24,25 @@
                 return [i, j];
             }
         } 
+    }
+};
+
+// Hash map solution
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
+ var twoSum = function(nums, target) {
+    let map = new Map();
+    
+    for (let i = 0; i < nums.length; i ++) {
+        const sub = target - nums[i];
+        
+        if (map.has(sub)) {
+            return [map.get(sub), i]
+        }
+        
+        map.set(nums[i], i)
     }
 };
